@@ -1,0 +1,21 @@
+Thank you for installing {{ .Chart.Name }}.
+
+Your PgBouncer instance is now running.
+
+To connect to your PgBouncer instance:
+
+1. Get the PgBouncer pod name:
+   export POD_NAME=$(kubectl get pods --namespace {{ .Release.Namespace }} -l "app.kubernetes.io/name={{ include "pgbouncer.name" . }},app.kubernetes.io/instance={{ .Release.Name }}" -o jsonpath="{.items[0].metadata.name}")
+
+2. Connect to PgBouncer using psql:
+   kubectl exec -it $POD_NAME --namespace {{ .Release.Namespace }} -- psql -h localhost -p {{ .Values.service.port }} -U {{ (index .Values.users 0).name }} {{ (index .Values.databases "postgres").dbname }}
+
+3. Or port-forward to connect from your local machine:
+   kubectl port-forward --namespace {{ .Release.Namespace }} svc/{{ include "pgbouncer.fullname" . }} {{ .Values.service.port }}:{{ .Values.service.port }}
+   psql -h localhost -p {{ .Values.service.port }} -U {{ (index .Values.users 0).name }} {{ (index .Values.databases "postgres").dbname }}
+
+4. To get the PgBouncer admin console:
+   kubectl exec -it $POD_NAME --namespace {{ .Release.Namespace }} -- psql -h localhost -p {{ .Values.service.port }} -U {{ (index .Values.users 0).name }} pgbouncer
+
+For more information about PgBouncer, visit:
+https://www.pgbouncer.org/

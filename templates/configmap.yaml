@@ -1,0 +1,30 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: {{ include "pgbouncer.fullname" . }}-config
+  labels:
+    {{- include "pgbouncer.labels" . | nindent 4 }}
+data:
+  pgbouncer.ini: |
+    [databases]
+    {{- range $key, $value := .Values.databases }}
+    {{ $key }} = host={{ $value.host }} port={{ $value.port }} dbname={{ $value.dbname }} user={{ $value.user }} password={{ $value.password }}
+    {{- end }}
+
+    [pgbouncer]
+    listen_addr = 0.0.0.0
+    listen_port = {{ .Values.service.port }}
+    unix_socket_dir =
+    auth_file = /etc/pgbouncer/userlist.txt
+    auth_type = {{ .Values.config.authType }}
+    pool_mode = {{ .Values.config.poolMode }}
+    max_client_conn = {{ .Values.config.maxClientConn }}
+    ignore_startup_parameters = {{ .Values.config.ignoreStartupParameters }}
+
+    # Log settings
+    admin_users = {{ .Values.config.adminUsers }}
+    log_connections = 1
+    log_disconnections = 1
+    log_pooler_errors = 1
+    log_stats = 1
+    stats_period = 60 

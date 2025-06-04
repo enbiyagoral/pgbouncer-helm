@@ -1,0 +1,112 @@
+replicaCount: 1
+
+image:
+  repository: edoburu/pgbouncer
+  pullPolicy: IfNotPresent
+  tag: "1.18.0"
+
+imagePullSecrets: []
+nameOverride: ""
+fullnameOverride: ""
+
+serviceAccount:
+  create: true
+  automount: true
+  annotations: {}
+  name: ""
+
+podAnnotations: {}
+podLabels: {}
+
+podSecurityContext: {}
+
+securityContext:
+  allowPrivilegeEscalation: false
+  capabilities:
+    drop: ['all']
+  readOnlyRootFilesystem: true
+  runAsNonRoot: true
+  runAsUser: 1000
+
+service:
+  type: ClusterIP
+  port: 6432
+  nodePort: 30643
+
+ingress:
+  enabled: false
+  className: ""
+  annotations: {}
+  hosts:
+    - host: chart-example.local
+      paths:
+        - path: /
+          pathType: ImplementationSpecific
+  tls: []
+
+resources:
+  limits:
+    cpu: 500m
+    memory: 512Mi
+  requests:
+    cpu: 100m
+    memory: 128Mi
+
+livenessProbe:
+  tcpSocket:
+    port: 6432
+  periodSeconds: 60
+readinessProbe:
+  tcpSocket:
+    port: 6432
+  periodSeconds: 10
+
+autoscaling:
+  enabled: false
+  minReplicas: 1
+  maxReplicas: 100
+  targetCPUUtilizationPercentage: 80
+
+volumes: []
+
+volumeMounts: []
+
+nodeSelector: {}
+
+tolerations: []
+
+affinity: {}
+
+databases:
+  postgres:
+    host: postgresql.postgresql.svc.cluster.local
+    port: 5432
+    dbname: postgres
+    user: postgres
+    password: postgres
+
+config:
+  poolMode: transaction
+  maxClientConn: 100
+  authType: md5
+  adminUsers: postgres
+  ignoreStartupParameters: extra_float_digits
+
+users:
+  - name: postgres
+    password: postgres
+
+podManagementPolicy: OrderedReady
+updateStrategy:
+  type: RollingUpdate
+  rollingUpdate:
+    partition: 0
+    maxUnavailable: 0
+
+networkPolicy:
+  enabled: true
+
+podDisruptionBudget:
+  enabled: true
+  minAvailable: 1
+
