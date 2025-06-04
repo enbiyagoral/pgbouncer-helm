@@ -1,0 +1,36 @@
+apiVersion: v1
+entries:
+  pgbouncer:
+  - annotations:
+      artifacthub.io/changes: |
+        - Initial release
+      artifacthub.io/images: |
+        - name: pgbouncer
+          image: edoburu/pgbouncer:1.18.0
+      category: Database
+      license: Apache-2.0
+    apiVersion: v2
+    appVersion: 1.18.0
+    created: "2025-06-05T01:34:11.881424+03:00"
+    description: A Helm chart for PgBouncer - lightweight connection pooler for PostgreSQL
+    digest: 413fe29995e5f3c66dbf02da030e4df38b9c622873ef248e418749fb7339c1c3
+    home: https://github.com/enbiyagoral/pgbouncer-helm
+    icon: https://www.pgbouncer.org/images/pgbouncer.png
+    keywords:
+    - postgresql
+    - pgbouncer
+    - connection-pooler
+    - database
+    maintainers:
+    - email: enbiyagoral@gmail.com
+      name: Enbiya Goral
+      url: https://github.com/enbiyagoral
+    name: pgbouncer
+    sources:
+    - https://github.com/enbiyagoral/pgbouncer-helm
+    - https://www.pgbouncer.org/
+    type: application
+    urls:
+    - https://enbiyagoral.github.io/pgbouncer-helm/pgbouncer-0.1.0.tgz
+    version: 0.1.0
+generated: "2025-06-05T01:34:11.879534+03:00"

@@ -26,4 +26,6 @@ charts/
 
 # Test files
 test/
-tests/ 
+tests/
+
+!docs/*.tgz 
