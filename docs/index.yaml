@@ -22,7 +22,7 @@ entries:
     - connection-pooler
     - database
     maintainers:
-    - email: enbiyagoral@gmail.com
+    - email: menbiyagoral@gmail.com
       name: Enbiya Goral
       url: https://github.com/enbiyagoral
     name: pgbouncer

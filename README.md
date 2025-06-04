@@ -1,6 +1,6 @@
 # PgBouncer Helm Chart
 
-[![Artifact Hub](https://img.shields.io/endpoint?url=https://artifacthub.io/badge/repository/pgbouncer-helm)](https://artifacthub.io/packages/helm/pgbouncer-helm)
+[![Artifact Hub](https://img.shields.io/endpoint?url=https://artifacthub.io/badge/repository/pgbouncer-helm-chart)](https://artifacthub.io/packages/search?repo=pgbouncer-helm-chart)
 
 This Helm chart deploys [PgBouncer](https://www.pgbouncer.org/) on Kubernetes. PgBouncer is a lightweight and high-performance connection pooler for PostgreSQL databases.
 
