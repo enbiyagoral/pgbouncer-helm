@@ -31,6 +31,6 @@ entries:
     - https://www.pgbouncer.org/
     type: application
     urls:
-    - https://enbiyagoral.github.io/pgbouncer-helm/docs/pgbouncer-0.1.1.tgz
+    - https://enbiyagoral.github.io/pgbouncer-helm/pgbouncer-0.1.1.tgz
     version: 0.1.1
 generated: "2025-06-05T09:52:31.752065+03:00"
