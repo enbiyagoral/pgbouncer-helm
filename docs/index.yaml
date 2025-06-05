@@ -11,9 +11,9 @@ entries:
       license: Apache-2.0
     apiVersion: v2
     appVersion: 1.18.0
-    created: "2025-06-05T01:34:11.881424+03:00"
+    created: "2025-06-05T09:52:31.753713+03:00"
     description: A Helm chart for PgBouncer - lightweight connection pooler for PostgreSQL
-    digest: 413fe29995e5f3c66dbf02da030e4df38b9c622873ef248e418749fb7339c1c3
+    digest: 47c68bc150b4d81a09d59f1e8d4e0201b618af837bda48b17cad7205b0962bea
     home: https://github.com/enbiyagoral/pgbouncer-helm
 #    icon: https://www.pgbouncer.org/images/pgbouncer.png
     keywords:
@@ -22,7 +22,7 @@ entries:
     - connection-pooler
     - database
     maintainers:
-    - email: menbiyagoral@gmail.com
+    - email: enbiyagoral@gmail.com
       name: Enbiya Goral
       url: https://github.com/enbiyagoral
     name: pgbouncer
@@ -31,6 +31,6 @@ entries:
     - https://www.pgbouncer.org/
     type: application
     urls:
-    - https://enbiyagoral.github.io/pgbouncer-helm/pgbouncer-0.1.0.tgz
-    version: 0.1.0
-generated: "2025-06-05T01:34:11.879534+03:00"
+    - https://enbiyagoral.github.io/pgbouncer-helm/docs/pgbouncer-0.1.1.tgz
+    version: 0.1.1
+generated: "2025-06-05T09:52:31.752065+03:00"
