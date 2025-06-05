@@ -15,7 +15,7 @@ entries:
     description: A Helm chart for PgBouncer - lightweight connection pooler for PostgreSQL
     digest: 413fe29995e5f3c66dbf02da030e4df38b9c622873ef248e418749fb7339c1c3
     home: https://github.com/enbiyagoral/pgbouncer-helm
-    icon: https://www.pgbouncer.org/images/pgbouncer.png
+#    icon: https://www.pgbouncer.org/images/pgbouncer.png
     keywords:
     - postgresql
     - pgbouncer
